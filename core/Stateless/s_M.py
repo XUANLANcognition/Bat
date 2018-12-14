@@ -8,5 +8,5 @@ IPList = [str(i) for i in netaddr.IPSet(netaddr.IPNetwork(ip))]
 
 for i in IPList:
     for j in port:
-        send(IP(dst = i)/TCP(dport = j, flags = 2), verbose = False)
+        send(IP(dst = i)/TCP(dport = j, flags = 'S'), verbose = False)
         print(str(i) + ' : ' + str(j))
