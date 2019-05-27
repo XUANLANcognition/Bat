@@ -20,8 +20,8 @@ def rM(iface, IPDict):
     
 
 if __name__ == '__main__':
-    ip = '192.168.16.0/24'
-    port = [53, 80, 443]
+    ip = '10.10.10.0/24'
+    port = [8000]
     iface = 'eth0'
 
     IPList = [str(i) for i in netaddr.IPSet(netaddr.IPNetwork(ip))]
