@@ -1,6 +1,6 @@
 # Bat
 
-## run
+## 准备环境
 ```
 pipenv install
 ```
