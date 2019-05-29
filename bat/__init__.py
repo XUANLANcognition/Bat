@@ -2,7 +2,7 @@
 pass
 '''
 
-from . import *
+import bat.report
 
 def setup():
     pass

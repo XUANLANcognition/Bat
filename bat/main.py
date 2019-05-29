@@ -5,10 +5,10 @@
 The origin of dream.
 """
 
-from syn_scan import syn_scan
+from bat.syn_scan import syn_scan
 
 def main():
-    syn_scan.test()
+    syn_scan.main()
 
 if __name__ == '__main__':
     main()

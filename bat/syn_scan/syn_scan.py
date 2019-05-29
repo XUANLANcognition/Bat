@@ -5,10 +5,12 @@
 
 from scapy.all import *
 
+from bat.report import report
+
 def main():
     r = sr1(IP(dst='10.10.10.2')/TCP(dport=80, flags='S'))
-    report = Report('SYN', r.show())
-    report.create()
+    re = report.Report('SYN', str(r.show(dump=True)))
+    re.create()
 
 def test():
     print("hi")

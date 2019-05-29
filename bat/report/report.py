@@ -13,6 +13,6 @@ class Report(object):
         self.content = content
 
 
-    def create():
+    def create(self):
         with open('./' + self.headtitle + '.html', 'w') as f:
             f.write(self.content)
