@@ -12,7 +12,14 @@ class Report(object):
         self.headtitle = 'Bat''s' + headtitle
         self.content = content
 
+    def replace(self):
+        self.content = self.content.replace('\n', '<br>')
+        self.content = self.content.replace('###', '')
+        self.content = self.content.replace('[', '<h3>')
+        self.content = self.content.replace(']', '</h3>')
 
     def create(self):
+        self.replace()
+        self.content = '<h1>' + self.headtitle + ' Report</h1>' + self.content
         with open('./' + self.headtitle + '.html', 'w') as f:
             f.write(self.content)
