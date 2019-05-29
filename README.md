@@ -15,4 +15,8 @@ pipenv shell
 pip install -e .
 ```
 
-## modules
+## Modules
+1. [SYN scan](https://github.com/XUANLANcognition/bat/blob/master/bat/syn_scan/README.md)
+```
+python -m bat syn [IP] [PORT] 
+```
