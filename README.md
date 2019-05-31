@@ -20,3 +20,7 @@ pip install -e .
 ```
 python -m bat syn [IP] [PORT] 
 ```
+
+## License
+
+Bat is [BSD licensed](./LICENSE).
