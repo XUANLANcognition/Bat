@@ -23,3 +23,11 @@ class Report(object):
         self.content = '<h1>' + self.headtitle + ' Report</h1>' + self.content
         with open('./' + self.headtitle + '.html', 'w') as f:
             f.write(self.content)
+
+class ScanReport(Report):
+    """
+    For scan
+    """
+
+    def __init__(self, headtitle, content):
+        pass

@@ -6,19 +6,23 @@
 from scapy.all import *
 
 from bat.report import report
+from bat.scan import scan
 
-def main(argv):
-    dst = '127.0.0.1'
-    dport = 80
-    if len(argv) == 4:
-        dst = argv[2]
-        dport = int(argv[3])
-    r = sr1(IP(dst=dst)/TCP(dport=dport, flags='S'), timeout=1)
-    if r:
-        re = report.Report('SYN', r.show(dump=True))
-    else:
-        re = report.Report('SYN', 'No response.')
-    re.create()
+class SynScanner(scan.Scanner):
+
+    def p1(self):
+        print("Please wait...")
+        ans, unans = sr(IP(dst=self.dnetwork)/TCP(dport=(1, 100), flags='S'), timeout=5, verbose=0)
+        print("port\tstatus")
+        print("********************")
+        ans.summary( lfilter =  lambda r: r[1].sprintf("%TCP.flags%") == 'SA', prn = lambda r: r[1].sprintf("%TCP.sport%\topen"))
+
+    def p2(self):
+        ans, unans = sr(IP(dst=self.dnetwork)/TCP(dport=int(self.dport), flags='S'), timeout=5, verbose=0)
+        ans.show()
+
+    def p3(self):
+        print("p3")
 
 if __name__ == '__main__':
-    main()
+    scanner = SynScanner(argv)
