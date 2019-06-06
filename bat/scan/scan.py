@@ -2,7 +2,7 @@ import ipaddress
 
 class Scanner(object):
     """
-    I am all of scaner' father in bat.
+    I am the source of all scanners.
     """
 
     def __init__(self, argv):
