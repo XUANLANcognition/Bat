@@ -6,7 +6,7 @@
 from scapy.all import *
 
 from bat.report import report
-from bat.scan import scan
+from bat.core.scan import scan
 
 class SynScanner(scan.Scanner):
 
