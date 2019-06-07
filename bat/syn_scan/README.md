@@ -7,5 +7,5 @@ SYN扫描作为默认的也是最受欢迎的扫描选项，是有充分理由�
 PASS
 ## run
 ```
-python -m bat syn [IP] [PORT]
+python -m bat -p 192.168.1.1
 ```
