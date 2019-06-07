@@ -13,10 +13,8 @@ class SynScanner(scan.Scanner):
     def p1(self):
         print("Please wait...")
         ans, unans = sr(IP(dst=self.dnetwork)/TCP(dport=(1, 1000), flags='S'), timeout=10, verbose=0)
-        print("*********************************")
-        print("Bat report for " + self.dnetwork)
-        print("port\tstatus")
-        print("*********************************")
+        print("Bat report for " + self.dnetwork + '\n')
+        print("port\t\tstatus")
         ans.summary( lfilter =  lambda r: r[1].sprintf("%TCP.flags%") == 'SA', prn = lambda r: r[1].sprintf("%TCP.sport%\topen"))
         ans.summary( lfilter =  lambda r: r[1].sprintf("%TCP.flags%") != 'SA', prn = lambda r: r[1].sprintf("%TCP.sport%\tclose"))
 

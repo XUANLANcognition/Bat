@@ -38,7 +38,9 @@ class ManagementUtility:
             commands.syn_scan.go(self.argv[2:])
 
     def host_scan(self):
-        ans, unans = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=self.argv[2]), timeout=2, verbose=0)
+        print("Please wait...")
+        ans, unans = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=self.argv[2]), timeout=5, verbose=0)
+        print("Bat report for " + self.argv[2] + '\n')
         ans.summary(lambda r: r[1].sprintf('%Ether.src% | %ARP.psrc% is up'))
 
     def script_attack(self):
